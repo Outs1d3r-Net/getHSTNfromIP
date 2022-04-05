@@ -18,5 +18,5 @@ with open(sys.argv[1], 'r') as listIP:    # LISTANDO IPs DENTRO DA WORDLIST PASS
             hostname = socket.gethostbyaddr(IP.strip())    # RESOLVENDO HOSTNAME PELO ENDEREÇO IP.
             print('IP;'+" ".join(hostname[2])+';Hostname;'+hostname[0])    # SAIDA EM FORMATO PARA ADICIONAR EM PLANILHA
 
-        except (RuntimeError, TypeError, NameError, socket.herror):    # TRATAMENTO DE ERROS
+        except (RuntimeError, TypeError, NameError, socket.herror, OSError):    # TRATAMENTO DE ERROS
             pass
