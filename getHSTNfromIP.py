@@ -23,7 +23,7 @@ def Usage():    # FUNÇÃO EXIBE INSTRUÇOES DE USO NA TELA.
 
 def withHOST():    # FUNÇÃO PARA UTILIZAÇÃO COM APENAS UM IP.
     try:
-        hostname = socket.gethostbyaddr(sys.argv[2].strip())    # RESOLVENDO HOSTNAME PELO ENDEREÇO IP.
+        hostname = socket.gethostbyaddr(sys.argv[2].strip())    # RESOLVENDO HOSTNAME PELO ENDEREÇO IP. (https://docs.python.org/3/library/socket.html#socket.gethostbyaddr)
         print('IP: ', " ".join(hostname[2]), 'Hostname:',hostname[0])    # SAIDA EM FORMATO AMIGAVEL.
 
     except (RuntimeError, TypeError, NameError, socket.herror, OSError):    # TRATAMENTO DE ERROS.
